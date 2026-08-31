@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
+    >
+    <title>Mythic Card</title>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="app">
+
+        <header class="topbar">
+            <div>
+                <div class="brand">MYTHIC CARD</div>
+                <div class="subtitle">Collect • Catch • Conquer</div>
+            </div>
+
+            <div class="profile">
+                <span id="user-name">Player</span>
+            </div>
+        </header>
+
+        <main>
+
+            <section id="home" class="screen active">
+                <div class="hero">
+                    <div class="hero-title">🎴 ACTIVE DROP</div>
+                    <div class="rarity">LEGENDARY</div>
+
+                    <div class="card-frame">
+                        <div class="card-placeholder">🃏</div>
+                    </div>
+
+                    <div class="card-name">Card #0001</div>
+
+                    <div class="timer" id="timer">--:--:--</div>
+
+                    <button class="catch-btn" id="catch-btn">
+                        ⚡ CATCH
+                    </button>
+                </div>
+            </section>
+
+            <section id="drops" class="screen">
+                <h2>🎴 Drops</h2>
+
+                <div class="empty-card">
+                    <div class="big-icon">🎴</div>
+                    <h3>Active Drops</h3>
+                    <p>Your available cards will appear here.</p>
+                </div>
+
+                <div class="section-card">
+                    <h3>🏆 Events</h3>
+                    <div id="events-list">
+                        <div class="empty-mini">No events yet.</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="collection" class="screen">
+                <h2>🃏 Collection</h2>
+
+                <div class="stats">
+                    <div>
+                        <strong id="total-cards">0</strong>
+                        <span>Total Cards</span>
+                    </div>
+
+                    <div>
+                        <strong>0</strong>
+                        <span>Legendary</span>
+                    </div>
+
+                    <div>
+                        <strong>0</strong>
+                        <span>Mythic</span>
+                    </div>
+                </div>
+
+                <div id="collection-empty" class="empty-card">
+                    <div class="big-icon">📦</div>
+                    <h3>Collection Empty</h3>
+                    <p>Catch your first card to start collecting.</p>
+                </div>
+
+                <div id="collection-list" class="collection-list"></div>
+            </section>
+
+            <section id="profile" class="screen">
+                <h2>👤 Profile</h2>
+
+                <div class="profile-card">
+                    <div class="avatar">👤</div>
+                    <h3 id="profile-name">Player</h3>
+                    <p id="profile-id">Telegram ID: —</p>
+                    <div id="profile-premium" class="profile-premium">
+                        Free Player
+                    </div>
+                    <div id="premium-status" class="premium-status">
+                        FREE ACCOUNT
+                    </div>
+                    <div id="premium-until" class="premium-until">
+                        Premium not active
+                    </div>
+                </div>
+
+                <div class="section-card">
+                    <h3>⭐ Premium Requests</h3>
+                    <div id="premium-requests">
+                        <div class="empty-mini">No requests yet.</div>
+                    </div>
+                </div>
+
+                <div class="section-card">
+                    <h3>⚔️ Battles</h3>
+                    <div id="battles-list">
+                        <div class="empty-mini">No battles yet.</div>
+                    </div>
+                </div>
+
+                <div class="section-card">
+                    <h3>🔄 Trades</h3>
+                    <div id="trades-list">
+                        <div class="empty-mini">No trades yet.</div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <nav class="bottom-nav">
+            <button data-screen="home" class="nav-btn active">
+                <span>🏠</span>
+                <small>Home</small>
+            </button>
+
+            <button data-screen="drops" class="nav-btn">
+                <span>🎴</span>
+                <small>Drops</small>
+            </button>
+
+            <button data-screen="collection" class="nav-btn">
+                <span>🃏</span>
+                <small>Collection</small>
+            </button>
+
+            <button data-screen="profile" class="nav-btn">
+                <span>👤</span>
+                <small>Profile</small>
+            </button>
+        </nav>
+
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
