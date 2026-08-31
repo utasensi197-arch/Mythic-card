@@ -22,6 +22,7 @@ BOT_TOKEN = os.getenv("BOT_TOKEN", "").strip()
 
 
 def get_db():
+    DB_PATH.parent.mkdir(parents=True, exist_ok=True)
     db = sqlite3.connect(DB_PATH)
     db.row_factory = sqlite3.Row
     db.execute("PRAGMA foreign_keys = ON")
