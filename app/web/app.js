@@ -1,3 +1,4 @@
+const API_BASE = 'https://mythic-card-production.up.railway.app';
 const tg = window.Telegram?.WebApp;
 
 if (tg) {
@@ -178,7 +179,7 @@ function renderDrop(drop) {
 
 async function loadDrop() {
     try {
-        const response = await fetch("/api/drop", {
+        const response = await fetch(API_BASE + "/api/drop", {
             cache: "no-store"
         });
 
@@ -235,7 +236,7 @@ async function catchCard() {
     }
 
     try {
-        const response = await fetch("/api/catch", {
+        const response = await fetch(API_BASE + "/api/catch", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -295,7 +296,7 @@ async function catchCard() {
 
 async function loadStats() {
     try {
-        const response = await fetch("/api/stats", {
+        const response = await fetch(API_BASE + "/api/stats", {
             cache: "no-store"
         });
 
@@ -324,7 +325,7 @@ async function loadStats() {
 
 async function loadCards() {
     try {
-        const response = await fetch("/api/cards", {
+        const response = await fetch(API_BASE + "/api/cards", {
             cache: "no-store"
         });
 
@@ -389,7 +390,7 @@ async function apiFetch(path, options = {}) {
 
 async function loadMe() {
     try {
-        const data = await apiFetch("/api/me");
+        const data = await apiFetch(API_BASE + "/api/me");
 
         const u = data.user || {};
 
@@ -429,7 +430,7 @@ async function loadMe() {
 
 async function loadCollection() {
     try {
-        const data = await apiFetch("/api/collection");
+        const data = await apiFetch(API_BASE + "/api/collection");
 
         const cards = data.cards || [];
 
@@ -486,7 +487,7 @@ async function loadCollection() {
 
 async function loadPremium() {
     try {
-        const data = await apiFetch("/api/premium");
+        const data = await apiFetch(API_BASE + "/api/premium");
 
         const premium = data.premium || {};
         const requests = data.requests || [];
@@ -543,7 +544,7 @@ async function loadPremium() {
 
 async function loadEvents() {
     try {
-        const data = await fetch("/api/events", {
+        const data = await fetch(API_BASE + "/api/events", {
             cache: "no-store"
         }).then(r => r.json());
 
@@ -591,7 +592,7 @@ async function loadEvents() {
 
 async function loadBattles() {
     try {
-        const data = await apiFetch("/api/battles");
+        const data = await apiFetch(API_BASE + "/api/battles");
 
         const list =
             document.getElementById("battles-list");
@@ -633,7 +634,7 @@ async function loadBattles() {
 
 async function loadTrades() {
     try {
-        const data = await apiFetch("/api/trades");
+        const data = await apiFetch(API_BASE + "/api/trades");
 
         const list =
             document.getElementById("trades-list");
