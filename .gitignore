@@ -1,0 +1,12 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+web_server.log
+web_server.pid
+*.backup
+*.pre-api-upgrade
+*.before-render
+*.pid
+*.log
+database/*.db
